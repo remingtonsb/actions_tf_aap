@@ -42,6 +42,7 @@ jobs:
       run: terraform apply --auto-approve
       
   install_nginx:
+    needs: create
     runs-on: ubuntu-latest
     steps:
     - name: Add SSH key
