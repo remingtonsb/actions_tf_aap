@@ -69,6 +69,7 @@ jobs:
     - name: Install Nginx by Ansible
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: ls -lha  
       run: ansible-playbook -i inventory install_nginx.yaml
     - name: Upload .terraform.lock.hcl
       run: aws s3 cp .terraform.lock.hcl s3://${{ inputs.bucket_name }}
