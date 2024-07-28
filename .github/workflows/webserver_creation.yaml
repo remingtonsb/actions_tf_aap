@@ -49,6 +49,10 @@ jobs:
         chmod 600 /home/runner/.ssh/id_rsa
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null	
         ssh-add /home/runner/.ssh/id_rsa
+    - name: List dir
+      env: 
+        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      run: echo $SSH_AUTH_SOCK & ls -lha
     - name: Install Nginx by Ansible
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
