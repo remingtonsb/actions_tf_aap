@@ -60,7 +60,11 @@ jobs:
         chmod 600 /home/runner/.ssh/id_rsa
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null	
         ssh-add /home/runner/.ssh/id_rsa
-    - name: List dir
+    - name: Download inventory
+      uses: actions/download-artifact@v4
+      with:
+        name: inventory
+    - name: Install Nginx
       env: 
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
       run: ansible-playbook -i inventory install_nginx.yaml 
