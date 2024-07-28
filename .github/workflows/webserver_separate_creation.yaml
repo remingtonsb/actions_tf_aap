@@ -40,7 +40,11 @@ jobs:
       run: terraform validate
     - name: Apply Terraform resources creation
       run: terraform apply --auto-approve
-      
+    - name: Upload math result for job 1
+      uses: actions/upload-artifact@v4
+      with:
+        name: inventory
+        path: inventory
   install_nginx:
     needs: create
     runs-on: ubuntu-latest
@@ -59,7 +63,7 @@ jobs:
     - name: List dir
       env: 
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: ansible-playbook -i inventory.template install_nginx.yaml 
+      run: ansible-playbook -i inventory install_nginx.yaml 
 #    - name: Install Nginx by Ansible
 #      env:
 #        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
