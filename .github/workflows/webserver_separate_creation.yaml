@@ -59,7 +59,7 @@ jobs:
     - name: List dir
       env: 
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: ls -lha
+      run: ansible-playbook -i inventory.template install_nginx.yaml 
 #    - name: Install Nginx by Ansible
 #      env:
 #        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
