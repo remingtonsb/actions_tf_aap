@@ -45,6 +45,8 @@ jobs:
     needs: create
     runs-on: ubuntu-latest
     steps:
+    - name: Repository checkout
+      uses: actions/checkout@v4
     - name: Add SSH key
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
