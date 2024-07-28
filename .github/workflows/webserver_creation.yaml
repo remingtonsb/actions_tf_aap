@@ -33,7 +33,7 @@ jobs:
       - name: Create terraform.tfvars
         run: echo "ec2_keypair_public_key=\"${{ secrets.EC2_PUBLIC_KEY }}\"" > terraform.tfvars
       - name: Initialize Terraform Dependencies
-        run: terraform init -upgrade
+        run: terraform init
       - name: Validate Terraform scripts
         run: terraform validate
       - name: Apply Terraform resources creation
