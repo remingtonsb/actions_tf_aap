@@ -40,6 +40,10 @@ jobs:
       run: terraform validate
     - name: Apply Terraform resources creation
       run: terraform apply --auto-approve
+      
+  install_nginx:
+    runs-on: ubuntu-latest
+    steps:
     - name: Add SSH key
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
@@ -52,10 +56,10 @@ jobs:
     - name: List dir
       env: 
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: echo $SSH_AUTH_SOCK & ls -lha
-    - name: Install Nginx by Ansible
-      env:
-        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      run: ansible-playbook -i inventory install_nginx.yaml
+      run: ls -lha
+#    - name: Install Nginx by Ansible
+#      env:
+#        SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+#     run: ansible-playbook -i inventory install_nginx.yaml
     - name: Upload .terraform.lock.hcl
       run: aws s3 cp .terraform.lock.hcl s3://${{ inputs.bucket_name }}
