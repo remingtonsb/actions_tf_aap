@@ -1,4 +1,4 @@
-- hosts: publicip
+- hosts: servers
   become: true
   tasks:
     - name: install nginx
