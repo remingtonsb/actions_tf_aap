@@ -1,0 +1,24 @@
+name: Create server on AWS
+run-name: Create Server on AWS
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  
+jobs:
+
+  create_server:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Test AWX: Simple workflow template"
+        uses: fitbeard/action-trigger-awx@v24.2.0
+        with:
+          controller_host: ${{ secrets.CONTROLLER_HOST }}
+          controller_oauth_token: ${{ secrets.CONTROLLER_OAUTH_TOKEN }}
+          resource_type: workflow_job_template
+          resource_name: actions-awxkit-workflow-test
+
+ 
+  
