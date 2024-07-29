@@ -46,7 +46,7 @@ variable "instance_type" {
 
 variable "ami_id" {
   type = string
-  default = "ami-00db8dadb36c9815e"
+  default = "ami-012c2e8e24e2ae21d"
 }
 
 variable "monitoring_flag" {
