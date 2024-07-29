@@ -21,7 +21,7 @@ jobs:
         ansible_tower_user: ${{ secrets.ansibleUser }}
         ansible_tower_pass: ${{ secrets.ansiblePass }}
         ansible_tower_url: ${{ secrets.ansibleUrl }}
-        job_template_id: "17"
+        workflow_template_id	: "17"
         extra_vars: |
           {
           
