@@ -45,8 +45,21 @@ jobs:
       with:
         name: inventory
         path: inventory
-  install_nginx:
+        
+  run_helloworld:
     needs: create
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger Job Template on AWX
+      uses: bilalahmad99/github-action-trigger-awx@1.1.0
+      with:
+        ansible_tower_user: ${{ secrets.ansibleUser }}
+        ansible_tower_pass: ${{ secrets.ansiblePass }}
+        ansible_tower_url: ${{ secrets.ansibleUrl }}
+        job_template_id: "9"
+    
+  install_nginx:
+    needs: [create, run_helloworld] 
     runs-on: ubuntu-latest
     steps:
     - name: Repository checkout
