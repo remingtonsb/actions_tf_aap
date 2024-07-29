@@ -50,7 +50,7 @@ jobs:
     needs: create
     runs-on: ubuntu-latest
     steps:
-    - name: Trigger Job Template on AWX
+    - name: Triger Job Template no AAP
       uses: bilalahmad99/github-action-trigger-awx@1.1.0
       with:
         ansible_tower_user: ${{ secrets.ansibleUser }}
@@ -59,7 +59,7 @@ jobs:
         job_template_id: "9"
         extra_vars: |
           {
-            "hosts": "ec2-18-140-173-169.ap-southeast-1.compute.amazonaws.com"
+            "env": "dev"
           }
     
   install_nginx:
