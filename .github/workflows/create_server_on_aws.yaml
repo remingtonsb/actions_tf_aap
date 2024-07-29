@@ -12,9 +12,7 @@ on:
 
 jobs:
 
-        
   create_server:
-    needs: create
     runs-on: ubuntu-latest
     steps:
     - name: Triger Job Template no AAP
