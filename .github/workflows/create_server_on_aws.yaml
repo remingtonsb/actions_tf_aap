@@ -1,6 +1,15 @@
 name: Create server on AWS
 run-name: Create Server on AWS
 
+
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+
 jobs:
 
         
