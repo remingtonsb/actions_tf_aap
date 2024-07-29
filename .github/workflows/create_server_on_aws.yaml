@@ -24,6 +24,5 @@ jobs:
         workflow_template_id: "17"
         extra_vars: |
          {
-            "environment": "dev",
-            "test": 1
+
          }
