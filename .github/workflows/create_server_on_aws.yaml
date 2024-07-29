@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Triger Job Template no AAP
-      uses: bilalahmad99/github-action-trigger-awx@latest
+      uses: bilalahmad99/github-action-trigger-awx@1.1.0
       with:
         ansible_tower_user: ${{ secrets.ansibleUser }}
         ansible_tower_pass: ${{ secrets.ansiblePass }}
