@@ -22,3 +22,8 @@ jobs:
         ansible_tower_pass: ${{ secrets.ansiblePass }}
         ansible_tower_url: ${{ secrets.ansibleUrl }}
         workflow_template_id: "17"
+        extra_vars: |
+         {
+            "environment": "dev",
+            "test": 1
+         }
