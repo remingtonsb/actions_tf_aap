@@ -24,5 +24,5 @@ jobs:
         job_template_id: "17"
         extra_vars: |
           {
-            "env": "dev"
+          
           }
