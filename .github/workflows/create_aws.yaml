@@ -1,5 +1,5 @@
-name: Create server on AWS
-run-name: Create Server on AWS
+name: Create AWS Server
+run-name: Create AWS Server
 
 on:
   push:
@@ -18,7 +18,8 @@ jobs:
           controller_host: ${{ secrets.CONTROLLER_HOST }}
           controller_oauth_token: ${{ secrets.CONTROLLER_OAUTH_TOKEN }}
           resource_type: workflow_job_template
-          resource_name: actions-awxkit-workflow-test
+          resource_name: Demo-workflow-ansible
+
 
  
   
