@@ -18,7 +18,7 @@ jobs:
           controller_host: ${{ secrets.CONTROLLER_HOST }}
           controller_oauth_token: ${{ secrets.CONTROLLER_OAUTH_TOKEN }}
           resource_type: workflow_job_template
-          resource_name: Demo-workflow-ansible
+          resource_name: aws-workflow-job-template
 
 
  
